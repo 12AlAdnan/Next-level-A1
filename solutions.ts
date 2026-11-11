@@ -4,7 +4,6 @@ const multiplyValue = (a: number, b?: number):number => {
     return a * b;
 }
 
-// console.log(multiplyValue(10,0));
 
 const processInput = (value: string | number | boolean): string | number | boolean => {
     if(typeof value === "string"){
@@ -18,20 +17,16 @@ const processInput = (value: string | number | boolean): string | number | boole
     return value;
 }
 
-// console.log(processInput(false));
 
 const formatCoordinate = (coordinate: readonly [number, number, string]):string => {
     return `Location: ${coordinate[2]} (${coordinate[0]}, ${coordinate[1]})`
 }
 
-// console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
 
 const concatenateArrays = <A>(...arr: A[][]):A[] =>{
    return arr.flat();
 }
 
-// console.log(concatenateArrays(["a", "b"], ["c", "d"]));
-// console.log(concatenateArrays([1, 2], [6, 4], [5]));
 
 interface Course {
     title:string,
@@ -53,9 +48,6 @@ const courses: Course[] = [
 ];
 
 
-
-// console.log(getPopularCourses(courses, 80));
-
 const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] =>{
     return items.map((i) => i[key]);
 }
@@ -72,8 +64,7 @@ const users: Users[] = [
     { id: 3, name: "Tariq", role: "Subscriber" }
 ];
 
-// console.log(pluckValues(users, "name"));
-// console.log(pluckValues(users, "id"));
+
 
 class Employee {
 
@@ -107,8 +98,6 @@ class Manager extends Employee{
 const emp = new Employee("Alice",50000);
 const man = new Manager("Alice",50000,"Engineering");
 
-// console.log(emp.getDetails());
-// console.log(man.getRoleInfo());
 
 const validateAgeAsync = async (age: number): Promise<string> => {
     if(age < 18){
@@ -129,5 +118,3 @@ const age = async () => {
         return (error as Error).message;
     }
 };
-
-// age().then(console.log)
